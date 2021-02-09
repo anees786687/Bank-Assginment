@@ -41,6 +41,12 @@ public class Bank3 {
                     obj = new SecRun(amount, dep, with);
                     amount = obj.withdraw(amount, with);                
                 }
+                else if(choice==3) // show the current balance until the user decides to exit
+                    break;
+                else{
+                    System.out.println("Invalid Choice, please enter choice from 1, 2 or 3\n");
+                    continue;
+                }
 
                 if(counter>=1 && (choice==1||choice==2)){ //if it is user second or more turn start applying charges
                     /*
@@ -50,21 +56,20 @@ public class Bank3 {
                     obj = new SecRun(prevchoice, choice, amount, dep, with); 
                     amount = obj.checkCharges(prevchoice, choice, amount, dep, with);
                     
-                }
-                    
-                if(choice!=3) // show the current balance until the user decides to exit
-                    System.out.println("Your balance is " + Math.round(amount*100.00)/100.00+"\n");
-                    
+                }                    
+                
+                System.out.println("Your balance is " + Math.round(amount*100.00)/100.00+"\n");
+
                 prevchoice = choice; // change the previous choice after user has performed current operation. Useful to decide what charges user will incur.
                 counter++; // raise the counter to see what turn is on, need not record it as it is only to check if the user has done more than one turn
             }
-
+            System.out.println("Your final balance is " + Math.round(amount*100.00)/100.00+"\n"); // set the final account 
         }
         catch(Exception e){
-            System.out.println("Error occured: "+e);
+            System.out.println("Error occured: Invalid Character");
         }
         finally{
-            System.out.println("Your final balance is " + Math.round(amount*100.00)/100.00+"\n"); // set the final account 
+           System.out.println("Goodbye!\n");
         }
     }
     

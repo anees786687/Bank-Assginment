@@ -63,8 +63,8 @@ public class Bank2 {
             }
 
             if(counter>=1 && (choice==1||choice==2)){
-                SecRun obj2 = new SecRun(prevchoice, choice, amount, dep, with);
-                amount = obj2.Check(prevchoice, choice, amount, dep, with);
+                
+                amount = obj.SecRun(prevchoice, choice, amount, dep, with);
                 
             }
                 
