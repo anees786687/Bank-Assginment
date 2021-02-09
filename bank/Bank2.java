@@ -1,4 +1,11 @@
 import java.util.*;
+/*
+WAP a program for a banking application where bank charges certain amount on 
+deposit and withdrawal
+Deposition followed by Deposition=> 0.20% of the amount deposited
+Withdrawal followed by withdrawal=> 0.25% of the amount withdrawn
+Deposition followed by withdrawal=> 0.40% of the amount deposited
+Withdrawal followed by deposition=> 0.50% of the amount deposited*/
 
 public class Bank2 {
 
