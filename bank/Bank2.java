@@ -1,5 +1,14 @@
 import java.util.*;
 
+
+/*
+WAP a program for a banking application where bank charges certain amount on 
+deposit and withdrawal
+Deposition followed by Deposition=> 0.20% of the amount deposited
+Withdrawal followed by withdrawal=> 0.25% of the amount withdrawn
+Deposition followed by withdrawal=> 0.40% of the amount deposited
+Withdrawal followed by deposition=> 0.50% of the amount deposited*/
+
 public class Bank2 {
 
     double DEPADEP = 0.002, WITHAWITH = 0.0025, DEPAWITH = 0.004, WITHADEP = 0.005;
@@ -63,9 +72,7 @@ public class Bank2 {
             }
 
             if(counter>=1 && (choice==1||choice==2)){
-                SecRun obj2 = new SecRun(prevchoice, choice, amount, dep, with);
-                amount = obj2.Check(prevchoice, choice, amount, dep, with);
-                
+                amount = obj.SecRun(prevchoice, choice, amount, dep, with);
             }
                 
             if(choice!=3)
