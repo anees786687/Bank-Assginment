@@ -13,6 +13,10 @@ Withdrawal followed by deposition=> 0.50% of the amount deposited*/
 
 public class Bank {
    
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e6f05d1413d2dfead5261b5a83f545683c2bf89
     public static void main(String[] args){
 
         double DEPADEP = 0.002, WITHAWITH = 0.0025, DEPAWITH = 0.004, WITHADEP = 0.005;

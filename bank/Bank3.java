@@ -6,6 +6,10 @@ Deposition followed by Deposition=> 0.20% of the amount deposited
 Withdrawal followed by withdrawal=> 0.25% of the amount withdrawn
 Deposition followed by withdrawal=> 0.40% of the amount deposited
 Withdrawal followed by deposition=> 0.50% of the amount deposited*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e6f05d1413d2dfead5261b5a83f545683c2bf89
 public class Bank3 {
 
     public static void main(String[] args){
