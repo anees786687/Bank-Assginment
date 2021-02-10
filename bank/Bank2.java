@@ -19,30 +19,33 @@ Withdrawal followed by deposition=> 0.50% of the amount deposited*/
 public class Bank2 {
 
     double DEPADEP = 0.002, WITHAWITH = 0.0025, DEPAWITH = 0.004, WITHADEP = 0.005;
-     
+    double charge; 
 
     public  double SecRun(int prevchoice, int choice, double amount, double dep, double with){
-        if(prevchoice ==1 && choice==1){
-            double charge = DEPADEP*dep;
+        if(prevchoice ==1 && choice==1){ //charge for dep after dep
+            charge = DEPADEP*dep;
             amount = amount - charge;
-            System.out.println("charge for deposition followed by Deposition is "+charge+" @ "+DEPADEP*100+"%\n");
+            System.out.println("charge for deposition followed by deposition is "+charge+" @ "+DEPADEP*100+"%\n");
+            System.out.println("Total amount deposited " + (dep-charge) +"\n");
             
         }
-        else if(prevchoice ==1 && choice== 2){
-            double charge = DEPAWITH*with;
+        else if(prevchoice == 2 && choice == 1){ //charge for dep after withdrawal
+            charge = DEPAWITH*dep;
             amount = amount - charge;
             System.out.println("charge for deposition followed by withdrawal is "+charge+" @ "+DEPAWITH*100+"%\n");
-
+            System.out.println("Total amount deposited " + (dep-charge) +"\n");
         }
-        else  if(prevchoice == 2 && choice== 2){
-            double charge = WITHAWITH*dep;
+        else  if(prevchoice == 2 && choice == 2){ //charge for withdrawal after withdrawal 
+            charge = WITHAWITH*with;
             amount = amount - charge;
             System.out.println("charge for withdrawal followed by withdrawal is "+charge+" @ "+WITHAWITH*100+"%\n");
+            System.out.println("Total amount withdrawn " + (with) +"\n");
         }
-        else if(prevchoice == 2 && choice== 1){
-            double charge = WITHADEP*dep;                
+        else if(prevchoice == 1 && choice== 2){ //charge for withdrawal after deposit
+            charge = WITHADEP*dep;                
             amount = amount - charge;
             System.out.println("charge for withdrawal followed by deposition is "+charge+" @ "+WITHADEP*100+"%\n");
+            System.out.println("Total amount withdrawn " + (with) +"\n");
         }
         return (amount*100)/100.00;
         
@@ -63,7 +66,7 @@ public class Bank2 {
 
         while(choice!=3){
 
-            System.out.println("what would you like to do today?\n1.)Deposit\n2.)Withdraw");
+            System.out.println("what would you like to do today?\n1.)Deposit\n2.)Withdraw\n3.)Exit");
             choice = scan.nextInt();
             System.out.println();
 
@@ -79,13 +82,9 @@ public class Bank2 {
             }
 
             if(counter>=1 && (choice==1||choice==2)){
-<<<<<<< HEAD
                 
                 amount = obj.SecRun(prevchoice, choice, amount, dep, with);
                 
-=======
-                amount = obj.SecRun(prevchoice, choice, amount, dep, with);
->>>>>>> 2e6f05d1413d2dfead5261b5a83f545683c2bf89
             }
                 
             if(choice!=3)
